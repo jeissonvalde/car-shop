@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+  <div id="header"></div>
+  <div id="app-container"></div>
+  <div id="footer"></div>
+
+
+
+  <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.10.0/firebase-compat.min.js"
+      integrity="sha512-7FNNTC5zNCLNX8lQqc4ykNEJd7fQN9hdv1lmzSTDzbuQLGPOFYO1jl3CCHRURresNcCBUMmRHrZRC4OevFAOWw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.10.0/firebase-analytics.min.js" integrity="sha512-1HvuWr7ZLyEPZL9bbtr/tf4Px+HtawD14+knpv3dj0aaf+EwEuT3/fn8WY0k2hx8jI8VUjxOiyfWyUMb6YXfAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.10.0/firebase-app-check.min.js" integrity="sha512-uPa9MOR+wUnlRVnXARdkEnh7blwwjd7Le/ovq8g5GQ5vQj1EruOM6vYt8kcWttFTL5elhdw5ORa+QZEro4m8Ew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.10.0/firebase-app.min.js" integrity="sha512-xzyk4Ngy3AsT4qw84lzMaMv1hiCSA3c/nlNSBgzJoP1l+ZI/SATKCG66umTKwmZlPkOq6zDc76sbEQHmtrbJbA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.10.0/firebase-auth.min.js" integrity="sha512-clw5k+qRi9b07VIQXG5GWZHHoZFF6Rn3cbQYgHT7K+n/uvgFuHZeb4cR3zbVg6+zAO+W+uLJ9zXPannEBPrNxQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.10.0/firebase-database.min.js" integrity="sha512-eqdzXUoz/q/GEXN+u5BYUvBwZRLqBncjk2KIwX38Kvgs7CIsTQKmW4QnXg3s+l4oElj6h46Ie4Y3YnXrlPLh7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.10.0/firebase-storage.min.js" integrity="sha512-NsSlmY0EqgWwhFFqstS3061beT3NUoYfl5d5XSS6gcBDK6BrxYn2Whw06DTLO6f9/Wl9UmWKdfpG6JBpSr6ZFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.10.0/firebase-firestore.min.js" integrity="sha512-63p1vwVj9GPGPUstx5Ql9qJcA8ihZ2i1zViwehkvON9rVagVJecoSnwMQXqVwOge2/Z4roaO6R+FAncQtLBlgg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js" integrity="sha512-1g3IT1FdbHZKcBVZzlk4a4m5zLRuBjMFMxub1FeIRvR+rhfqHFld9VFXXBYe66ldBWf+syHHxoZEbZyunH6Idg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js" integrity="sha512-vNrhFyg0jANLJzCuvgtlfTuPR21gf5Uq1uuSs/EcBfVOz6oAHmjqfyPoB5rc9iWGSnVE41iuQU4jmpXMyhBrsw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

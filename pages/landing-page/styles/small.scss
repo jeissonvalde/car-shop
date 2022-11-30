@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
+
+@media (max-width: 720px) {
+  .main-landing {
+    flex-direction: column;
+    justify-content: flex-start !important;
+
+    .wrap {
+      flex-direction: column;
+
+      
+      .l-sign-in {
+        width: 280px !important;
+        margin: 40px auto;
+      }
+
+      .l-search-inp {
+        margin: auto;
+        $dim: 320px !important;
+
+        .field {
+          input {
+            width: $dim;
+            padding: 10px;
+            padding-right: 50px;
+          }
+        }
+
+        .results {
+          .results-list {
+            max-width: $dim;
+            background: white;
+            padding: 8px;
+    
+            
+            div, span {
+              background: white;
+              padding: 6px 16px;
+              text-transform: capitalize;
+              display: inline-block;
+              cursor: pointer;
+              &:hover {
+                background: rgb(209, 209, 209);
+              }
+            }
+          }
+    
+          .suggestions {
+            max-width: $dim;
+            background: white;
+            color: gray;
+            padding: 6px;
+    
+            .divide {
+              border-top: 3px solid rgba(128, 128, 128, 0.486);
+              height: 8px;
+              width: 100%;
+              margin: auto;
+              border-radius: 8px;
+            }
+    
+            div {
+              display: inline-block;
+              color: rgb(82, 82, 82);
+              margin-left: 4px;
+              cursor: pointer;
+              &:hover {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  
+  .title-b {
+    font-size: 2rem !important;
+  }
+  
+  .title-a {
+    font-size: 2rem !important;
+    font-weight: 600;
+    color: white;
+    max-width: 800px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px gray;
+
+    span {
+      font-weight: 0;
+      font-size: 1.4rem !important;
+      font-family: 'Sansita Swashed', cursive;
+      display: block;
+    }
+  }
+}

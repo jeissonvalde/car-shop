@@ -1,0 +1,9 @@
+// React project
+
+A landing page for a business
+
+- Background image
+* Search input
+* Login form
+* Texts Carousel for anything (models)
+* Responsive
