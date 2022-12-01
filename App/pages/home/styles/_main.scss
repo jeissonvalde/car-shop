@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap');
+@import './small.scss';
+
+$timingFunction: cubic-bezier(0.97, 0.01, 0.66, 0.46);
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  max-width: 800px;
+  width: 100%;
+}
+
+.landing-wrap {
+  min-height: 100vh;
+  background-size: cover;
+}
+
+.title-b {
+  font-size: 2.4rem;
+}
+
+.title-a {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 36px;
+  color: white;
+  max-width: 800px;
+  margin-bottom: 20px;
+  text-shadow: 1px 0px 12px gray;
+
+  span {
+    font-weight: 0;
+    font-size: 1.8rem;
+    font-family: 'Sansita Swashed', cursive;
+    display: block;
+
+
+    will-change: display, opacity;
+    // opacity: 0;
+    // max-height: 100px;
+    // height: 100%;
+    // animation: messageAnims 20s ease-in-out infinite;
+    // animation-delay: calc(10s * var(--i));
+  }
+
+  // Animations
+  will-change: transform, max-height;
+  transition: transform 1s $timingFunction,
+              max-height .8s ease-in-out;
+  max-height: 1000px;
+  &.move {
+    transform: translateY(-1000px);
+    max-height: 0px;
+  }
+}
+
+.main-landing {
+  // min-height: 100vh;
+  // background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .l-sign-in {
+    background: rgba(255, 255, 255, 0.795);
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    // border-radius: 8px;
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+      
+      span {
+        text-transform: uppercase;
+        font-size: .9rem;
+      }
+
+      #btn-send {
+        background: rgb(117, 172, 253);
+        padding: 10px 18px;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 8px;
+        // box-shadow: 3px 4px 0px 4px rgb(79, 143, 238);
+      }
+    }
+
+    // Animations
+    will-change: transform, max-height;
+    transition: transform 1s $timingFunction, max-height 0s ease-in-out;
+    transition-delay: 0s, 1s;
+    max-height: 1000px;
+    &.move {
+      transform: translateY(1000px);
+      max-height: 0px;
+      animation: moveLoginForm .6s linear forwards;
+    }
+  }
+
+  .l-search-inp {
+    .field {
+      display: flex;
+      input {
+        width: 360px;
+        padding: 10px;
+        padding-right: 50px;
+        border: unset;
+        border-radius: 8px;
+      }
+  
+      .s-icon {
+        // position: absolute;
+        ion-icon[name="search-outline"],
+        ion-icon[name="close-outline"] {
+          font-size: 1.8rem;
+          transform: translate(-40px, 10px);
+          cursor: pointer;
+        }
+        ion-icon[name="close-outline"] {
+          display: none;
+        }
+      }
+    }
+
+    .results {
+      display: none;
+      position: absolute;
+      
+      .results-list {
+        max-width: 360px;
+        background: white;
+        padding: 8px;
+
+        
+        div, span {
+          // background: white;
+          padding: 6px 16px;
+          text-transform: capitalize;
+          display: inline-block;
+          cursor: pointer;
+          &:hover {
+            background: rgb(209, 209, 209);
+          }
+        }
+      }
+
+      .suggestions {
+        max-width: 360px;
+        background: white;
+        color: gray;
+        padding: 6px;
+
+        .divide {
+          border-top: 3px solid rgba(128, 128, 128, 0.486);
+          height: 8px;
+          width: 100%;
+          margin: auto;
+          border-radius: 8px;
+        }
+
+        div {
+          display: inline-block;
+          color: rgb(82, 82, 82);
+          margin-left: 4px;
+          cursor: pointer;
+          &:hover {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    &.active {
+      $br: 8px; // borderRadius
+      input {
+        border-radius: $br $br 0 0;
+      }
+      
+      .results {
+        display: block;
+
+        .results-list {
+          // box-shadow: inset 0px 0px 20px 0px rgba(128, 128, 128, 0.397),
+          //             inset 0px 0px 00px 0px transparent,
+          //             inset 0px 0px 00px 0px transparent,
+          //             inset 0px 0px 00px 0px transparent,
+          //             inset 0px 0px 0px 0px transparent;
+        }
+
+        .suggestions {
+          border-radius: 0 0 $br $br;
+        }
+      }
+    }
+
+    // Animations
+    will-change: transform, max-height;
+    transition: transform 1s $timingFunction, max-height .8s ease-in-out;
+    max-height: 1000px;
+    &.move {
+      transform: translateY(-1000px);
+      max-height: 0px;
+    }
+  }
+}
+
+
+
+input {
+  padding: 4px 14px;
+  border-radius: 4px;
+  border-color: rgb(189, 189, 189);
+  // text-transform: capitalize;
+
+  &:focus-visible {
+    outline: unset;
+  }
+}
+
+
+@keyframes messageAnims {
+  28% {
+    opacity: 1;
+    max-height: 200px;
+  }
+  30% {
+    opacity: 0;
+    max-height: 200px;
+  }
+  31% {
+    opacity: 0;
+    max-height: 0px;
+  }
+  89% {
+    opacity: 0;
+    max-height: 0px;
+  }
+  90% {
+    opacity: 0;
+    max-height: 200px;
+  }
+  92% {
+    opacity: 1;
+    max-height: 200px;
+  }
+}
+
+@keyframes moveLoginForm {
+  98% {
+    display: block;
+  }
+  100% {
+    display: none;
+  }
+}
