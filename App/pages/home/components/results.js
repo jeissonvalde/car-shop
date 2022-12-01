@@ -1,7 +1,7 @@
 // Results
 import * as React from 'react'
 import assets from '../json/assets'
-import Image from '../../../../../shared/components/Image'
+import Image from '../../../../../../shared/components/Image'
 import '../styles/results.scss'
 
 export default function (props) {

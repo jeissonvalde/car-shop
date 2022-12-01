@@ -1,8 +1,32 @@
-import routes from './routes'
-import dom from '../../shared/controllers/dom'
-// import p_1 from '../../media-temp/projects/landing-page-1(3).webm'
-import './styles/main.scss'
+// import routes from './routes'
+// import dom from '../../shared/controllers/dom'
+// import './styles/main.scss'
+// import * as ReactDOM from 'react-dom'
 
+
+
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './styles/main.scss';
+import App from './pages/home';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('app-container'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+reportWebVitals();
+
+
+
+
+
+
+/*
 export default {
   // routes,
   name: 'Landing page 1',
@@ -12,7 +36,6 @@ export default {
   noEditable: true,
   preview: {
     style: 'width: 100%;',
-    // src: p_1,
     wrap: {
       style: 'width: 400px; height: 190px'
     }
@@ -37,3 +60,4 @@ export default {
     body.append(scriptA)
   }
 }
+*/

@@ -1,5 +1,5 @@
 // Pages
-import Home from './pages/landing-page'
+import Home from './pages/home'
 
 export default [
   {

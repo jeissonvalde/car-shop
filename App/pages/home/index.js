@@ -6,7 +6,8 @@ import Results from './components/results'
 import assets from './json/assets'
 import controllers from './controllers'
 
-export default class Landing1 extends React.Component {
+
+export default class Home extends React.Component {
   state = {
     trademarks: assets.trademarks,
     search: undefined
