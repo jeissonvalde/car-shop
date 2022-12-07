@@ -1,10 +1,10 @@
 // Home page
 import * as React from 'react'
+import './styles/_main.scss'
 import Main from './components/main'
 import Results from './components/results'
 import assets from './json/assets'
 import controllers from './handles'
-import './styles/_index.scss'
 
 
 export default class Home extends React.Component {
