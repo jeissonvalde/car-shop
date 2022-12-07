@@ -1,4 +1,4 @@
-// Pages
+// Routes
 import Home from './pages/home'
 
 export default [

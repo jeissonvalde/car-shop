@@ -1,8 +1,11 @@
 import * as React from 'react'
 import assets from '../json/assets'
-import controllers from '../controllers'
+import controllers from '../handles'
+import propTypes from 'prop-types'
 
-export default class Main extends React.Component {
+
+
+class Main extends React.Component {
   state = {
     trademarks: assets.trademarks,
   }
@@ -39,7 +42,7 @@ export default class Main extends React.Component {
                 // onBlur={controllers.events.blur}
                 onChange={this._change}
                 onKeyDown={controllers.events.keyDown}
-                placeholder='Search' />
+                placeholder='Buscar renault' />
               <div className='s-icon'>
                 <ion-icon id="btn-search" onClick={this._goSearch.bind(null, handleSelectTrademark)} name="search-outline"></ion-icon>
                 <ion-icon id="btn-clean" onClick={this._cleanSearch.bind(null, handleSelectTrademark)} name="close-outline"></ion-icon>
@@ -96,3 +99,12 @@ export default class Main extends React.Component {
     )
   }
 }
+
+
+// Prop. types
+Main.propTypes = {
+  imageURL: propTypes.string,
+  handleSelectTrademark: propTypes.func
+}
+
+export default Main
