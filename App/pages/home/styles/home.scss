@@ -2,6 +2,8 @@
 @import './small.scss';
 
 $timingFunction: cubic-bezier(0.97, 0.01, 0.66, 0.46);
+$input-border-radius: 4px; // borderRadius
+$input-box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.226);
 
 .wrap {
   display: flex;
@@ -21,13 +23,14 @@ $timingFunction: cubic-bezier(0.97, 0.01, 0.66, 0.46);
 }
 
 .title-a {
+  padding: 4px;
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 36px;
   color: white;
   max-width: 800px;
   margin-bottom: 20px;
-  text-shadow: 1px 0px 12px gray;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 46%);
 
   span {
     font-weight: 0;
@@ -37,11 +40,6 @@ $timingFunction: cubic-bezier(0.97, 0.01, 0.66, 0.46);
 
 
     will-change: display, opacity;
-    // opacity: 0;
-    // max-height: 100px;
-    // height: 100%;
-    // animation: messageAnims 20s ease-in-out infinite;
-    // animation-delay: calc(10s * var(--i));
   }
 
   // Animations
@@ -56,21 +54,22 @@ $timingFunction: cubic-bezier(0.97, 0.01, 0.66, 0.46);
 }
 
 .main-landing {
-  // min-height: 100vh;
-  // background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   .l-sign-in {
-    background: rgba(255, 255, 255, 0.795);
+    background-color: rgba(255, 255, 255, 0.495);
+    backdrop-filter: blur(6px);
     width: 360px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 16px;
-    // border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 11px 25px 12px rgb(0 0 0 / 15%);
 
     .field {
       display: flex;
@@ -89,45 +88,62 @@ $timingFunction: cubic-bezier(0.97, 0.01, 0.66, 0.46);
         font-weight: 600;
         cursor: pointer;
         border-radius: 8px;
-        // box-shadow: 3px 4px 0px 4px rgb(79, 143, 238);
       }
     }
 
     // Animations
-    will-change: transform, max-height;
-    transition: transform 1s $timingFunction, max-height 0s ease-in-out;
-    transition-delay: 0s, 1s;
+    will-change: transform, max-height, opacity;
+    transition: transform 1s $timingFunction, max-height .3s ease-in-out, opacity .4s ease-in-out;
+    transition-delay: 0s, 1s, 0s;
     max-height: 1000px;
     &.move {
       transform: translateY(1000px);
       max-height: 0px;
-      animation: moveLoginForm .6s linear forwards;
+      animation: moveLoginForm .6s linear forwards ease-in-out;
     }
   }
 
   .l-search-inp {
+    position: relative;
+    z-index: 2;
+
     .field {
       display: flex;
-      input {
-        width: 360px;
-        padding: 10px;
-        padding-right: 50px;
-        border: unset;
-        border-radius: 8px;
-      }
-  
-      .s-icon {
-        // position: absolute;
-        ion-icon[name="search-outline"],
-        ion-icon[name="close-outline"] {
-          font-size: 1.8rem;
-          transform: translate(-40px, 10px);
-          cursor: pointer;
+
+      .input {
+        display: flex;
+        // width: 200px;
+        justify-content: space-around;
+        background-color: white;
+        box-shadow: $input-box-shadow;
+        border-radius: $input-border-radius;
+        
+        input {
+          padding-right: 10px;
+          background-color: transparent;
+          box-shadow: unset;
         }
-        ion-icon[name="close-outline"] {
-          display: none;
+
+        .s-icon {
+          width: 30px;
+          display: flex;
+          align-items: center;
+          padding: 0 4px;
+          color: rgb(157, 157, 157);
+
+          ion-icon[name="search-outline"],
+          ion-icon[name="close-outline"] {
+            font-size: 28px;
+            line-height: 28px;
+            margin: auto;
+            cursor: pointer;
+          }
+          ion-icon[name="close-outline"] {
+            display: none;
+          }
         }
       }
+      
     }
 
     .results {
@@ -139,9 +155,16 @@ $timingFunction: cubic-bezier(0.97, 0.01, 0.66, 0.46);
         background: white;
         padding: 8px;
 
+        .button-autocomp {
+
+          ion-icon {
+            color: rgba(0, 0, 0, 0.363);
+            transform: rotateZ(-45deg);
+          }
+        }
+
         
         div, span {
-          // background: white;
           padding: 6px 16px;
           text-transform: capitalize;
           display: inline-block;
@@ -179,24 +202,15 @@ $timingFunction: cubic-bezier(0.97, 0.01, 0.66, 0.46);
     }
 
     &.active {
-      $br: 8px; // borderRadius
       input {
-        border-radius: $br $br 0 0;
+        border-radius: $input-border-radius $input-border-radius 0 0;
       }
       
       .results {
         display: block;
 
-        .results-list {
-          // box-shadow: inset 0px 0px 20px 0px rgba(128, 128, 128, 0.397),
-          //             inset 0px 0px 00px 0px transparent,
-          //             inset 0px 0px 00px 0px transparent,
-          //             inset 0px 0px 00px 0px transparent,
-          //             inset 0px 0px 0px 0px transparent;
-        }
-
         .suggestions {
-          border-radius: 0 0 $br $br;
+          border-radius: 0 0 $input-border-radius $input-border-radius;
         }
       }
     }
@@ -212,13 +226,11 @@ $timingFunction: cubic-bezier(0.97, 0.01, 0.66, 0.46);
   }
 }
 
-
-
 input {
-  padding: 4px 14px;
-  border-radius: 4px;
-  border-color: rgb(189, 189, 189);
-  // text-transform: capitalize;
+  padding: 10px;
+  border: unset;
+  border-radius: $input-border-radius;
+  box-shadow: $input-box-shadow;
 
   &:focus-visible {
     outline: unset;
