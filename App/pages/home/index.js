@@ -4,7 +4,7 @@ import Main from './components/main'
 import Results from './components/results'
 import assets from './json/assets'
 import controllers from './handles'
-import './styles/index.scss'
+import './styles/home.scss'
 
 
 export default class Home extends React.Component {
