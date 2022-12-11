@@ -16,23 +16,16 @@
 
       .l-search-inp {
         margin: auto;
+        width: 250px;
         $dim: 320px !important;
-
-        .field {
-          input {
-            width: $dim;
-            padding: 10px;
-            padding-right: 50px;
-          }
-        }
 
         .results {
           .results-list {
             max-width: $dim;
             background: white;
             padding: 8px;
-    
-            
+
+
             div, span {
               background: white;
               padding: 6px 16px;

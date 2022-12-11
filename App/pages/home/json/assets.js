@@ -1,8 +1,8 @@
+import shared from "../../../../shared"
+
 export default {
   messages: [
-    'The time has come to define your destination and transport yourself freely.',
-    // 'Some text 2',
-    // 'Some text 3',
+    shared.string('tittle_2_home_page'),
   ],
   backgroundImage: 'https://firebasestorage.googleapis.com/v0/b/portafolio-333717.appspot.com/o/shared%2Fwhite-car-into.jpg?alt=media&token=0139820a-b106-4e88-b694-f3e0a95fed0a',
   suggestions: [

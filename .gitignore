@@ -8,7 +8,8 @@
 .ntvs_analysis.dat
 node_modules/
 package-lock.json
-react-project-example/
+react-project-example-01/
+public
 
 # User-specific files
 *.rsuser

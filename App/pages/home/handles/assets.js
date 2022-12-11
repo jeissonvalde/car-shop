@@ -1,4 +1,4 @@
-// Assets handlers
+// Assets handles
 function selectTrademark (search) {
   this.setState({ search })
 }
